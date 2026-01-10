@@ -1,0 +1,317 @@
+/* Base / layout */
+html {
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+*,
+*:before,
+*:after { box-sizing: inherit; }
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+a {
+    color: #f0c45c;
+    text-decoration: none;
+}
+a:hover { color: #f0c45c !important; }
+
+/* Typography */
+h1 { font-size: 2rem; }
+h2 { font-size: 1.67rem; }
+h3 { font-size: 1.34rem; }
+h4 { font-size: 1.11rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.89rem; }
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 700;
+    margin: 0.67rem 0;
+}
+
+/* Utility */
+.center { text-align: center !important; }
+
+.anchor-scroll-padding { scroll-margin-top: 7.45rem; }
+
+.content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 120rem;
+}
+
+.padding-header { padding: 5rem 0; }
+
+.padding-sub-row {
+    padding: 1rem 1rem;
+    width: 100%;
+}
+
+/* Responsive width tags */
+.col { width: 100%; }
+
+/* Small - sub 600px wide */
+.col.s1{width:8.33333%}
+.col.s2{width:16.66666%}
+.col.s3{width:24.99999%}
+.col.s4{width:33.33333%}
+.col.s5{width:41.66666%}
+.col.s6{width:49.99999%}
+.col.s7{width:58.33333%}
+.col.s8{width:66.66666%}
+.col.s9{width:74.99999%}
+.col.s10{width:83.33333%}
+.col.s11{width:91.66666%}
+.col.s12{width:99.99999%}
+
+/* Medium */
+@media (min-width:801px) {
+    .col.m1{width:8.33333%}
+    .col.m2{width:16.66666%}
+    .col.m3{width:24.99999%}
+    .col.m4{width:33.33333%}
+    .col.m5{width:41.66666%}
+    .col.m6{width:49.99999%}
+    .col.m7{width:58.33333%}
+    .col.m8{width:66.66666%}
+    .col.m9{width:74.99999%}
+    .col.m10{width:83.33333%}
+    .col.m11{width:91.66666%}
+    .col.m12{width:99.99999%}
+}
+
+/* Large */
+@media (min-width:1081px) {
+    .col.l1{width:8.33333%}
+    .col.l2{width:16.66666%}
+    .col.l3{width:24.99999%}
+    .col.l4{width:33.33333%}
+    .col.l5{width:41.66666%}
+    .col.l6{width:49.99999%}
+    .col.l7{width:58.33333%}
+    .col.l8{width:66.66666%}
+    .col.l9{width:74.99999%}
+    .col.l10{width:83.33333%}
+    .col.l11{width:91.66666%}
+    .col.l12{width:99.99999%}
+
+    h1 { font-size: 2.33rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.67rem; }
+    h4 { font-size: 1.34rem; }
+    h5 { font-size: 1.11rem; }
+    h6 { font-size: 1rem; }
+}
+
+/* Phone-specific */
+@media (max-width:650px) {
+    .padding-header { padding: 5.5rem 0 !important; }
+}
+
+/* Sections used in index.html */
+.section-header {
+    color: #ffffff !important;
+    background-color: #cf8165 !important;
+}
+
+.section-content {
+    color: #222 !important;
+    background-color: #080a0c !important;
+}
+
+.section-footer {
+    color: #111 !important;
+    background-color: #fff !important;
+    border-top: 1px solid #e9e9e9;
+}
+
+.tagline {
+    color: #f0c45c !important;
+    margin-bottom: 2rem;
+}
+
+/* Header */
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.header-logo { max-width: 30vh; }
+
+/* Footer (index.html version) */
+.footer-inner {
+    max-width: 70rem;
+    margin: 0 auto;
+    padding: 3.5rem 1rem;
+    text-align: center;
+}
+
+.footer-title {
+    text-transform: uppercase;
+    letter-spacing: 0.18rem;
+    font-size: 0.9rem;
+    color: #444;
+    margin-bottom: 0.75rem;
+}
+
+.footer-subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.footer-copy {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+/* Google font helper classes used in index.html */
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.noto-sans-400 {
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+/* Tabs */
+.tab {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    overflow: hidden;
+    background-color: #fdfdfd;
+}
+
+.tab button {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+
+    text-transform: uppercase;
+    color: #222;
+}
+
+.tab button:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.5rem;
+}
+
+.tab button.active {
+    text-decoration: underline;
+    text-underline-offset: 0.5rem;
+    text-decoration-thickness: 0.1rem;
+}
+
+.tab-content { background-color: #fcfaf9; }
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    color: #222;
+    animation: fadeEffect 1s;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Services list cards */
+.services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.service-card {
+    background: #fff;
+    border: 1px solid #eadfd7;
+    padding: 1.5rem 1.75rem;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+.service-card:hover {
+    border-color: #d7b6a7;
+    background-color: #fffdfc;
+    box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.10);
+    transform: translateY(-2px);
+}
+
+.service-name {
+    font-size: 1.34rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+    text-align: left;
+}
+
+.service-desc {
+    color: #666;
+    max-width: 46rem;
+    text-align: left;
+}
+
+.service-meta {
+    text-align: right;
+    min-width: 6.5rem;
+}
+
+.service-price {
+    color: #cf8165;
+    font-weight: 700;
+    font-size: 1.34rem;
+    line-height: 1.1;
+}
+
+.service-time {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+@media (max-width: 650px) {
+    .service-card { flex-direction: column; }
+    .service-meta { text-align: left; }
+}
