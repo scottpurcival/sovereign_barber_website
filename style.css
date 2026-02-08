@@ -315,3 +315,25 @@ h1,h2,h3,h4,h5,h6 {
     .service-card { flex-direction: column; }
     .service-meta { text-align: left; }
 }
+
+.services-includes {
+    margin-top: 2rem;
+    padding: 1.25rem 1.5rem;
+    background: #fff;
+    border: 1px solid #eadfd7;
+    text-align: left;
+}
+
+.services-includes h4 {
+    margin: 0 0 0.75rem 0;
+}
+
+.services-includes ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: #666;
+}
+
+.services-includes li {
+    margin: 0.35rem 0;
+}
