@@ -33,7 +33,7 @@ img {
 }
 
 a {
-    color: #ffffff;
+    color: #f0c45c;
     text-decoration: none;
 }
 a:hover { color: #f0c45c !important; }
@@ -134,7 +134,7 @@ h1,h2,h3,h4,h5,h6 {
 /* Sections used in index.html */
 .section-header {
     color: #ffffff !important;
-    background-color: #a94629 !important;
+    background-color: #ae5237 !important;
 }
 
 .section-content {
