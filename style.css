@@ -33,7 +33,7 @@ img {
 }
 
 a {
-    color: #f0c45c;
+    color: #ffffff;
     text-decoration: none;
 }
 a:hover { color: #f0c45c !important; }
@@ -296,6 +296,18 @@ h1,h2,h3,h4,h5,h6 {
 .service-meta {
     text-align: right;
     min-width: 6.5rem;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    gap: 0.8rem;
+}
+
+
+.service-starting-from {
+    color: #888;
+    font-size: 1rem;
+    font-style: italic;
 }
 
 .service-price {
