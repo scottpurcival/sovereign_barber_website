@@ -288,6 +288,9 @@ h1,h2,h3,h4,h5,h6 {
     font-weight: 700;
     margin-bottom: 0.35rem;
     text-align: left;
+
+    font-family: "EB Garamond", serif;
+    font-weight: 400;
 }
 
 .service-desc {
@@ -318,6 +321,9 @@ h1,h2,h3,h4,h5,h6 {
     font-weight: 700;
     font-size: 1.34rem;
     line-height: 1.1;
+
+    font-family: "EB Garamond", serif;
+    font-weight: 700;
 }
 
 .service-time {
@@ -337,10 +343,13 @@ h1,h2,h3,h4,h5,h6 {
     background: #fff;
     border: 1px solid #eadfd7;
     text-align: left;
+
 }
 
 .services-includes h4 {
     margin: 0 0 0.75rem 0;
+    font-family: "EB Garamond", serif;
+    font-weight: 400;
 }
 
 .services-includes ul {
@@ -358,7 +367,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .tab-title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: center;
     padding-bottom: 1.5rem;
 }
@@ -403,6 +412,18 @@ h1,h2,h3,h4,h5,h6 {
     outline-offset: 3px;
 }
 
-/* remove this (it doesn't match your HTML) */
-.header-link a {
+.eb-garamond-400
+{
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.eb-garamond-700
+{
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
