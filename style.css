@@ -185,13 +185,20 @@ h1,h2,h3,h4,h5,h6 {
     overflow: hidden;
 }
 
-.gallery-strip {
+.gallery-track {
     display: flex;
+    cursor: grab;
+    will-change: transform;
+}
+
+.gallery-track.dragging {
+    cursor: grabbing;
 }
 
 .gallery-thumb {
-    flex: 1;
-    aspect-ratio: 1;
+    width: 220px;
+    height: 220px;
+    flex-shrink: 0;
     background-size: cover;
     background-position: center;
     cursor: pointer;
@@ -200,16 +207,6 @@ h1,h2,h3,h4,h5,h6 {
 
 .gallery-thumb:hover { opacity: 0.82; }
 
-@media (max-width: 650px) {
-    .gallery-strip {
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-    }
-    .gallery-thumb {
-        flex: 0 0 38vw;
-        scroll-snap-align: start;
-    }
-}
 
 /* Gallery modal */
 .gallery-modal {
