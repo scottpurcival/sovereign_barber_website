@@ -29,7 +29,6 @@ function openTab(evt, tabName) {
 
 function loadStore() {
     if (storeLoaded) return;
-    storeLoaded = true;
 
     var query = JSON.stringify({
         query: '{ products(first: 50) { edges { node { title handle priceRange { minVariantPrice { amount currencyCode } } featuredImage { url altText } } } } }'
@@ -76,11 +75,12 @@ function loadStore() {
             grid.appendChild(card);
         });
 
+        storeLoaded = true;
         loading.style.display = 'none';
     })
     .catch(function () {
         var loading = document.getElementById('store-loading');
-        loading.textContent = 'Unable to load products right now. Please visit our store directly.';
+        loading.textContent = 'Unable to load products right now — click the tab to try again.';
     });
 }
 
