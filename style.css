@@ -161,8 +161,21 @@ h1,h2,h3,h4,h5,h6 {
     width: 100%;
 }
 
+.logo-circle {
+    width: min(48vh, 82vw);
+    height: min(48vh, 82vw);
+    border-radius: 50%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
 .header-logo {
-    max-width: 45vh;
+    width: 100%;
+    height: 88%;
+    object-fit: contain;
     filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.22));
 }
 
@@ -337,7 +350,7 @@ h1,h2,h3,h4,h5,h6 {
 
 @media (max-width: 650px) {
     .service-card { flex-direction: column; }
-    .service-meta { text-align: left; }
+    .service-meta { width: 100%; }
 }
 
 .services-includes {
