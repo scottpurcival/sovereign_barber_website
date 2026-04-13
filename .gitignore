@@ -1,1 +1,4 @@
 /temp/
+/todo/
+*.DS_Store
+*.md
