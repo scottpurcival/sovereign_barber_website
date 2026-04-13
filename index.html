@@ -18,7 +18,7 @@
     <!-- JavaScript -->
     <script src="script.js"></script>
 
-    <link rel="stylesheet" href="style.css?date=2026041302">
+    <link rel="stylesheet" href="style.css?date=2026041304">
 </head>
 
 <body>
@@ -39,6 +39,27 @@
         </div>
     </div>
 </header>
+
+<!-- Gallery -->
+<section class="section-gallery">
+    <div class="gallery-strip">
+        <div class="gallery-thumb" onclick="openGallery(0)" style="background-image:url('images/gallery/haircut-1.jpg')"></div>
+        <div class="gallery-thumb" onclick="openGallery(1)" style="background-image:url('images/gallery/haircut-2.jpg')"></div>
+        <div class="gallery-thumb" onclick="openGallery(2)" style="background-image:url('images/gallery/haircut-3.jpg')"></div>
+        <div class="gallery-thumb" onclick="openGallery(3)" style="background-image:url('images/gallery/markets-1.jpg')"></div>
+        <div class="gallery-thumb" onclick="openGallery(4)" style="background-image:url('images/gallery/markets-2.jpg')"></div>
+        <div class="gallery-thumb" onclick="openGallery(5)" style="background-image:url('images/gallery/salon.jpg')"></div>
+    </div>
+</section>
+
+<!-- Gallery modal -->
+<div id="gallery-modal" class="gallery-modal" onclick="closeGallery()">
+    <button class="gallery-close" onclick="closeGallery()">&#x2715;</button>
+    <button class="gallery-prev" onclick="event.stopPropagation(); changeGalleryImage(-1)">&#x2039;</button>
+    <img id="gallery-modal-img" src="" alt="" onclick="event.stopPropagation()">
+    <button class="gallery-next" onclick="event.stopPropagation(); changeGalleryImage(1)">&#x203A;</button>
+    <div class="gallery-counter" id="gallery-counter"></div>
+</div>
 
 <!-- Page content -->
 <div class="section-content anchor-scroll-padding content-block" id="content">

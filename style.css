@@ -63,7 +63,7 @@ h1,h2,h3,h4,h5,h6 {
     max-width: 120rem;
 }
 
-.padding-header { padding: 4rem 0; }
+.padding-header { padding: 2rem 0; }
 
 .padding-sub-row {
     padding: 1rem 1rem;
@@ -128,7 +128,7 @@ h1,h2,h3,h4,h5,h6 {
 
 /* Phone-specific */
 @media (max-width:650px) {
-    .padding-header { padding: 5.5rem 0 !important; }
+    .padding-header { padding: 2rem 0 !important; }
 }
 
 /* Sections used in index.html */
@@ -179,6 +179,96 @@ h1,h2,h3,h4,h5,h6 {
     filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.22));
 }
 
+/* Gallery strip */
+.section-gallery {
+    background: #1e3a19;
+    overflow: hidden;
+}
+
+.gallery-strip {
+    display: flex;
+}
+
+.gallery-thumb {
+    flex: 1;
+    aspect-ratio: 1;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.gallery-thumb:hover { opacity: 0.82; }
+
+@media (max-width: 650px) {
+    .gallery-strip {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+    .gallery-thumb {
+        flex: 0 0 38vw;
+        scroll-snap-align: start;
+    }
+}
+
+/* Gallery modal */
+.gallery-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.gallery-modal.open { display: flex; }
+
+#gallery-modal-img {
+    max-width: 90vw;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.gallery-close {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.gallery-prev,
+.gallery-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 4rem;
+    cursor: pointer;
+    padding: 0 1rem;
+    line-height: 1;
+    user-select: none;
+}
+
+.gallery-prev { left: 0.5rem; }
+.gallery-next { right: 0.5rem; }
+
+.gallery-counter {
+    position: absolute;
+    bottom: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
 /* Footer (index.html version) */
 .footer-inner {
     max-width: 70rem;
@@ -226,7 +316,7 @@ h1,h2,h3,h4,h5,h6 {
     display: flex;
     justify-content: center;
     gap: 1rem;
-
+    padding-top: 1.5rem;
     overflow: hidden;
     background-color: #f0f7ea;
 }
