@@ -1,3 +1,7 @@
+var SHOPIFY_DOMAIN = '5wcehe-rv.myshopify.com';
+var SHOPIFY_TOKEN  = 'c2de6091608d8eab69da4308ffe30bb3';
+var storeLoaded    = false;
+
 function openTab(evt, tabName) {
     // Declare all variables
     var i, tabcontent, tablinks;
@@ -17,6 +21,67 @@ function openTab(evt, tabName) {
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
+
+    if (tabName === 'Store') {
+        loadStore();
+    }
+}
+
+function loadStore() {
+    if (storeLoaded) return;
+    storeLoaded = true;
+
+    var query = JSON.stringify({
+        query: '{ products(first: 50) { edges { node { title handle priceRange { minVariantPrice { amount currencyCode } } featuredImage { url altText } } } } }'
+    });
+
+    fetch('https://' + SHOPIFY_DOMAIN + '/api/2024-01/graphql.json', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Shopify-Storefront-Access-Token': SHOPIFY_TOKEN
+        },
+        body: query
+    })
+    .then(function (res) { return res.json(); })
+    .then(function (data) {
+        var products = data.data.products.edges;
+        var grid = document.getElementById('store-grid');
+        var loading = document.getElementById('store-loading');
+
+        if (!products || products.length === 0) {
+            loading.textContent = 'No products found.';
+            return;
+        }
+
+        products.forEach(function (edge) {
+            var p = edge.node;
+            var price = parseFloat(p.priceRange.minVariantPrice.amount).toFixed(2);
+            var currency = p.priceRange.minVariantPrice.currencyCode;
+            var imgUrl = p.featuredImage ? p.featuredImage.url : '';
+            var imgAlt = p.featuredImage ? (p.featuredImage.altText || p.title) : p.title;
+            var productUrl = 'https://' + SHOPIFY_DOMAIN + '/products/' + p.handle;
+
+            var card = document.createElement('div');
+            card.className = 'store-card';
+            card.innerHTML =
+                '<a href="' + productUrl + '" target="_blank" rel="noopener">' +
+                (imgUrl ? '<img src="' + imgUrl + '" alt="' + imgAlt + '" class="store-card-img" loading="lazy">' : '') +
+                '<div class="store-card-body">' +
+                '<h3 class="store-card-title">' + p.title + '</h3>' +
+                '<p class="store-card-price">' + currency + ' $' + price + '</p>' +
+                '<span class="store-card-btn">Buy Now</span>' +
+                '</div>' +
+                '</a>';
+            grid.appendChild(card);
+        });
+
+        loading.style.display = 'none';
+    })
+    .catch(function () {
+        var loading = document.getElementById('store-loading');
+        loading.textContent = 'Unable to load products right now. Please visit our store directly.';
+    });
 }
 
 function scrambleIt(b,a,css,text){
