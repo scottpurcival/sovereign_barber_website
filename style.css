@@ -133,8 +133,8 @@ h1,h2,h3,h4,h5,h6 {
 
 /* Sections used in index.html */
 .section-header {
-    color: #ffffff !important;
-    background-color: #3a5a35 !important;
+    color: #1a2e14 !important;
+    background-color: #7c9264 !important;
 }
 
 .section-content {
@@ -149,7 +149,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .tagline {
-    color: #c5ddb0 !important;
+    color: #2a3e1e !important;
     margin-bottom: 2rem;
 }
 
@@ -486,7 +486,7 @@ h1,h2,h3,h4,h5,h6 {
 
     margin-top: 1.5rem;
 
-    background-color: #8aac4b;
+    background-color: #4e6490;
     color: #f5f0e6;
 
     letter-spacing: 0.02em;
